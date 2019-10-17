@@ -5,6 +5,7 @@ class Bike
   end
 
   def working?
+    true
   end
 
 end
