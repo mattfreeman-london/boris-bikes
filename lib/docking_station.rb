@@ -10,7 +10,12 @@ attr_reader :bike
   end
 
   def release_bike
-    Bike.new
+    if @bikes_docked.length > 0
+      @bikes_docked.pop(0)
+      Bike.new
+    else
+      fail "No bikes available."
+    end
   end
 
   def dock_bike(bike)
