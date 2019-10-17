@@ -14,11 +14,12 @@ attr_reader :bike
       @bikes_docked.pop(0)
       Bike.new
     else
-      fail "No bikes available."
+      raise "No bikes available."
     end
   end
 
   def dock_bike(bike)
+    return fail "Station already full." unless @bikes_docked.length < 1
     @bikes_docked.push(bike)
   end
 
